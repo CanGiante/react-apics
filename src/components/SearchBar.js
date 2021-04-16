@@ -7,13 +7,14 @@ class SearchBar extends React.Component {
 
     term: '',
 
-  }  // I can store data inside my app instead of the DOM
+  }
+
+  onFormSubmit(event) { event.preventDefault(); }
 
   render() {
-    console.log(this.state);
     return (
       <div className="ui segment">
-        <form className="ui form"> 
+        <form onSubmit={this.onFormSubmit} className="ui form"> 
           <div className="field">
 
             <label>Image Search</label>
