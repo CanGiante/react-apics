@@ -2,13 +2,15 @@ import React from 'react';
 
 class SearchBar extends React.Component {
 
-  // onInputClick() {
+  state = 
+  {
 
-  //   console.log('Input was clicked');
-  // }
+    term: '',
 
+  }  // I can store data inside my app instead of the DOM
 
   render() {
+    console.log(this.state);
     return (
       <div className="ui segment">
         <form className="ui form"> 
@@ -16,9 +18,10 @@ class SearchBar extends React.Component {
 
             <label>Image Search</label>
             <input 
-              type="text" 
-              onChange={(event) => console.log(event.target.value)}
-              // onClick={this.onInputClick}
+              type="text"
+
+              value={this.state.term}
+              onChange={(e) => this.setState({term: e.target.value})}
             />
           </div>
         </form>
