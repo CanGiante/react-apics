@@ -9,7 +9,10 @@ class SearchBar extends React.Component {
 
   }
 
-  onFormSubmit(event) { event.preventDefault(); }
+  onFormSubmit(event) {
+    event.preventDefault(); // I want override the default submit
+    console.log(this.state.term); // TypeError: can't access property "state", this is undefined
+  }
 
   render() {
     return (
