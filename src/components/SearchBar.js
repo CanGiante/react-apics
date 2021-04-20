@@ -2,16 +2,22 @@ import React from 'react';
 
 class SearchBar extends React.Component {
 
-  state = 
-  {
+  constructor(props) {
+    super(props);
 
-    term: '',
+    this.state = 
+    {
 
+      term: '',
+
+    }
+    
+    this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
   onFormSubmit(event) {
     event.preventDefault(); // I want override the default submit
-    console.log(this.state.term); // TypeError: can't access property "state", this is undefined
+    console.log(this.state.term); // input string
   }
 
   render() {
