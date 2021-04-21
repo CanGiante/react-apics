@@ -5,9 +5,10 @@ import SearchBar from './SearchBar';
 
 class App extends React.Component {
 
-  async onSearchSubmit(term) {
+  onSearchSubmit(term) {
     
-    const response = await axios.get('https://api.unsplash.com/search/photos', {
+    axios
+    .get('https://api.unsplash.com/search/photos', {
       
       params: {
         query: term
@@ -18,8 +19,10 @@ class App extends React.Component {
       }
       
     })
+    .then(response => {
 
-    console.log(response.data.results);
+      console.log(response.data.results);
+    });
   }
 
   render() {
