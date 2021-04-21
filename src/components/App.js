@@ -11,7 +11,7 @@ class App extends React.Component {
 
   }
 
-  onSearchSubmit(term) {
+  onSearchSubmit = (term) => {
     
     axios
     .get('https://api.unsplash.com/search/photos', {
@@ -28,6 +28,7 @@ class App extends React.Component {
     .then(response => {
 
       this.setState({ images: response.data.results });
+      console.log(this); // !
     });
 
   }
