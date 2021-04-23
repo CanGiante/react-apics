@@ -1,16 +1,22 @@
+import './ImageList.css';
 import React from 'react';
 
 const ImageList = (props) => {
 
-
-  const images = props.images.map(image => 
-    <div key={image.id}> 
-      <img src={image.urls.regular} alt={image.description}/> 
+  const images = props.images.map(({description, id, urls}) => 
+    <div 
+      key={id}
+      className="image-box"  
+    > 
+      <img 
+        src={urls.regular} 
+        alt={description}
+      /> 
     </div>
   );
 
 
-  return <div>{images}</div>
+  return <div className="images-list">{images}</div>
 };
 
 export default ImageList;
