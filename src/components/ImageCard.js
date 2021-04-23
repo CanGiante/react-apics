@@ -4,13 +4,16 @@ class ImageCard extends React.Component {
   constructor(props) {
     super(props);
 
-
     this.imageRef = React.createRef();
   }
 
-
   componentDidMount() {
-    console.log(this.imageRef);
+
+    this.imageRef.current.addEventListener('load', this.setSpan);
+  }
+
+  setSpan = () => {
+    
     console.log(this.imageRef.current.clientHeight);
   }
 
