@@ -1,0 +1,2 @@
+.images-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));grid-gap:0 10px}.images-list .image-box{width:100%;grid-row-end:span auto}img{width:100%}
+/*# sourceMappingURL=main.d2d7f2f6.chunk.css.map */
